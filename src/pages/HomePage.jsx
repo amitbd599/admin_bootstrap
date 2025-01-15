@@ -1,13 +1,8 @@
 import React from "react";
-import Header from "../components/Header";
+import MasterLayout from "../layout/MasterLayout";
 
 const HomePage = () => {
-  return (
-    <>
-      {/* Header */}
-      <Header />
-    </>
-  );
+  return <MasterLayout></MasterLayout>;
 };
 
 export default HomePage;
