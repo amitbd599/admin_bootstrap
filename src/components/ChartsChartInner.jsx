@@ -1,5 +1,5 @@
 import React from "react";
-import { Line, Bar, Pie, Doughnut, Radar } from "react-chartjs-2";
+import { Line, Bar, Pie, Doughnut, Radar, PolarArea } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   LineElement,
@@ -194,6 +194,32 @@ const ChartsChartInner = () => {
     },
   };
 
+  const PolarData = {
+    labels: ["Red", "Green", "Yellow", "Grey", "Blue"],
+    datasets: [
+      {
+        label: "My First Dataset",
+        data: [11, 16, 7, 3, 14],
+        backgroundColor: [
+          "rgb(255, 99, 132)",
+          "rgb(75, 192, 192)",
+          "rgb(255, 205, 86)",
+          "rgb(201, 203, 207)",
+          "rgb(54, 162, 235)",
+        ],
+      },
+    ],
+  };
+
+  const PolarOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+    },
+  };
+
   return (
     <section className='section'>
       <div className='row'>
@@ -266,7 +292,11 @@ const ChartsChartInner = () => {
             <div className='card-body'>
               <h5 className='card-title'>Polar Area Chart</h5>
               {/* Polar Area Chart */}
-              <canvas id='polarAreaChart' style={{ maxHeight: 400 }} />
+              <PolarArea
+                data={PolarData}
+                options={PolarOptions}
+                style={{ maxHeight: 400 }}
+              />
               {/* End Polar Area Chart */}
             </div>
           </div>
