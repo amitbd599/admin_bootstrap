@@ -21,6 +21,7 @@ import FormsValidationPage from "./pages/FormsValidationPage";
 import TablesGeneralPage from "./pages/TablesGeneralPage";
 import TablesDataPage from "./pages/TablesDataPage";
 import ChartsChartPage from "./pages/ChartsChartPage";
+import ChartsApexPage from "./pages/ChartsApexPage";
 
 function App() {
   return (
@@ -71,6 +72,7 @@ function App() {
 
         {/* charts */}
         <Route exact path='/charts-chartjs' element={<ChartsChartPage />} />
+        <Route exact path='/charts-apexcharts' element={<ChartsApexPage />} />
       </Routes>
     </BrowserRouter>
   );
