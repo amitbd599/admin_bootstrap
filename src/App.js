@@ -27,6 +27,7 @@ import IconsRemixPage from "./pages/IconsRemixPage";
 import IconsBoxiconsPage from "./pages/IconsBoxiconsPage";
 import UsersProfilePage from "./pages/UsersProfilePage";
 import FAQPage from "./pages/FAQPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
@@ -89,6 +90,9 @@ function App() {
 
         {/* Frequently Asked Questions */}
         <Route exact path='/pages-faq' element={<FAQPage />} />
+
+        {/* Contact */}
+        <Route exact path='/pages-contact' element={<ContactPage />} />
       </Routes>
     </BrowserRouter>
   );
