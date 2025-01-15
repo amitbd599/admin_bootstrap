@@ -93,6 +93,45 @@ const HomeInner = () => {
       },
     ],
   };
+
+  const trafficChartOptions = {
+    tooltip: {
+      trigger: "item",
+    },
+    legend: {
+      top: "5%",
+      left: "center",
+    },
+    series: [
+      {
+        name: "Access From",
+        type: "pie",
+        radius: ["40%", "70%"],
+        avoidLabelOverlap: false,
+        label: {
+          show: false,
+          position: "center",
+        },
+        emphasis: {
+          label: {
+            show: true,
+            fontSize: "18",
+            fontWeight: "bold",
+          },
+        },
+        labelLine: {
+          show: false,
+        },
+        data: [
+          { value: 1048, name: "Search Engine" },
+          { value: 735, name: "Direct" },
+          { value: 580, name: "Email" },
+          { value: 484, name: "Union Ads" },
+          { value: 300, name: "Video Ads" },
+        ],
+      },
+    ],
+  };
   return (
     <section className='section dashboard'>
       <div className='row'>
@@ -414,6 +453,96 @@ const HomeInner = () => {
                           <span className='badge bg-success'>Approved</span>
                         </td>
                       </tr>
+                      <tr>
+                        <th scope='row'>
+                          <a href='#'>#2049</a>
+                        </th>
+                        <td>Ashleigh Langosh</td>
+                        <td>
+                          <a href='#' className='text-primary'>
+                            At recusandae consectetur
+                          </a>
+                        </td>
+                        <td>$147</td>
+                        <td>
+                          <span className='badge bg-success'>Approved</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope='row'>
+                          <a href='#'>#2644</a>
+                        </th>
+                        <td>Angus Grady</td>
+                        <td>
+                          <a href='#' className='text-primar'>
+                            Ut voluptatem id earum et
+                          </a>
+                        </td>
+                        <td>$67</td>
+                        <td>
+                          <span className='badge bg-danger'>Rejected</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope='row'>
+                          <a href='#'>#2644</a>
+                        </th>
+                        <td>Raheem Lehner</td>
+                        <td>
+                          <a href='#' className='text-primary'>
+                            Sunt similique distinctio
+                          </a>
+                        </td>
+                        <td>$165</td>
+                        <td>
+                          <span className='badge bg-success'>Approved</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope='row'>
+                          <a href='#'>#2049</a>
+                        </th>
+                        <td>Ashleigh Langosh</td>
+                        <td>
+                          <a href='#' className='text-primary'>
+                            At recusandae consectetur
+                          </a>
+                        </td>
+                        <td>$147</td>
+                        <td>
+                          <span className='badge bg-success'>Approved</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope='row'>
+                          <a href='#'>#2644</a>
+                        </th>
+                        <td>Angus Grady</td>
+                        <td>
+                          <a href='#' className='text-primar'>
+                            Ut voluptatem id earum et
+                          </a>
+                        </td>
+                        <td>$67</td>
+                        <td>
+                          <span className='badge bg-danger'>Rejected</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope='row'>
+                          <a href='#'>#2644</a>
+                        </th>
+                        <td>Raheem Lehner</td>
+                        <td>
+                          <a href='#' className='text-primary'>
+                            Sunt similique distinctio
+                          </a>
+                        </td>
+                        <td>$165</td>
+                        <td>
+                          <span className='badge bg-success'>Approved</span>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -537,6 +666,36 @@ const HomeInner = () => {
                         <td>$79</td>
                         <td className='fw-bold'>41</td>
                         <td>$3,239</td>
+                      </tr>
+                      <tr>
+                        <th scope='row'>
+                          <a href='#'>
+                            <img src='assets/img/product-1.jpg' alt='' />
+                          </a>
+                        </th>
+                        <td>
+                          <a href='#' className='text-primary fw-bold'>
+                            Ut inventore ipsa voluptas nulla
+                          </a>
+                        </td>
+                        <td>$64</td>
+                        <td className='fw-bold'>124</td>
+                        <td>$5,828</td>
+                      </tr>
+                      <tr>
+                        <th scope='row'>
+                          <a href='#'>
+                            <img src='assets/img/product-2.jpg' alt='' />
+                          </a>
+                        </th>
+                        <td>
+                          <a href='#' className='text-primary fw-bold'>
+                            Exercitationem similique doloremque
+                          </a>
+                        </td>
+                        <td>$46</td>
+                        <td className='fw-bold'>98</td>
+                        <td>$4,508</td>
                       </tr>
                     </tbody>
                   </table>
@@ -712,11 +871,12 @@ const HomeInner = () => {
               <h5 className='card-title'>
                 Website Traffic <span>| Today</span>
               </h5>
-              <div
-                id='trafficChart'
-                style={{ minHeight: 400 }}
-                className='echart'
-              />
+              <div style={{ minHeight: 400 }} id='trafficChart'>
+                <ReactECharts
+                  option={trafficChartOptions}
+                  style={{ height: "400px" }}
+                />
+              </div>
             </div>
           </div>
           {/* End Website Traffic */}
