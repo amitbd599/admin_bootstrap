@@ -6,7 +6,7 @@ const Footer = () => {
       <div className='copyright'>
         © Copyright{" "}
         <strong>
-          <span>NiceAdmin</span>
+          <span>Admit_bootstrap</span>
         </strong>
         . All Rights Reserved
       </div>
