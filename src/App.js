@@ -11,6 +11,7 @@ import ListGroupPage from "./pages/ListGroupPage";
 import ModalPage from "./pages/ModalPage";
 import TabsPage from "./pages/TabsPage";
 import PaginationPage from "./pages/PaginationPage";
+import ProgressPage from "./pages/ProgressPage";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           path='/components-pagination'
           element={<PaginationPage />}
         />
+        <Route exact path='/components-progress' element={<ProgressPage />} />
       </Routes>
     </BrowserRouter>
   );
