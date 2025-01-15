@@ -241,6 +241,25 @@ const ChartsApexInner = () => {
       },
     },
   };
+
+  const PolarChartOptions = {
+    series: [14, 23, 21, 17, 15, 10, 12, 17, 21],
+    options: {
+      chart: {
+        type: "polarArea",
+        height: 350,
+        toolbar: {
+          show: true,
+        },
+      },
+      stroke: {
+        colors: ["#fff"],
+      },
+      fill: {
+        opacity: 0.8,
+      },
+    },
+  };
   return (
     <section className='section'>
       <div className='row'>
@@ -354,7 +373,12 @@ const ChartsApexInner = () => {
             <div className='card-body'>
               <h5 className='card-title'>Polar Area Chart</h5>
               {/* Polar Area Chart */}
-              <div id='polarAreaChart' />
+              <ApexCharts
+                options={PolarChartOptions.options}
+                series={PolarChartOptions.series}
+                type='polarArea'
+                height={350}
+              />
               {/* End Polar Area Chart */}
             </div>
           </div>
