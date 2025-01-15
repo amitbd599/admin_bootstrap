@@ -12,6 +12,7 @@ import ModalPage from "./pages/ModalPage";
 import TabsPage from "./pages/TabsPage";
 import PaginationPage from "./pages/PaginationPage";
 import ProgressPage from "./pages/ProgressPage";
+import SpinnersPage from "./pages/SpinnersPage";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           element={<PaginationPage />}
         />
         <Route exact path='/components-progress' element={<ProgressPage />} />
+        <Route exact path='/components-spinners' element={<SpinnersPage />} />
       </Routes>
     </BrowserRouter>
   );
