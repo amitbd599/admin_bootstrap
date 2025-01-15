@@ -94,6 +94,71 @@ const ChartsApexInner = () => {
       legend: { horizontalAlign: "left" },
     },
   };
+  const ColumnChartOptions = {
+    series: [
+      {
+        name: "Net Profit",
+        data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
+      },
+      {
+        name: "Revenue",
+        data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
+      },
+      {
+        name: "Free Cash Flow",
+        data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
+      },
+    ],
+    options: {
+      chart: {
+        type: "bar",
+        height: 350,
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: "55%",
+          endingShape: "rounded",
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        show: true,
+        width: 2,
+        colors: ["transparent"],
+      },
+      xaxis: {
+        categories: [
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+        ],
+      },
+      yaxis: {
+        title: {
+          text: "$ (thousands)",
+        },
+      },
+      fill: {
+        opacity: 1,
+      },
+      tooltip: {
+        y: {
+          formatter: function (val) {
+            return `$ ${val} thousands`;
+          },
+        },
+      },
+    },
+  };
   return (
     <section className='section'>
       <div className='row'>
@@ -132,7 +197,12 @@ const ChartsApexInner = () => {
             <div className='card-body'>
               <h5 className='card-title'>Column Chart</h5>
               {/* Column Chart */}
-              <div id='columnChart' />
+              <ApexCharts
+                options={ColumnChartOptions.options}
+                series={ColumnChartOptions.series}
+                type='bar'
+                height={350}
+              />
               {/* End Column Chart */}
             </div>
           </div>
