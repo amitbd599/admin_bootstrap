@@ -29,6 +29,8 @@ import UsersProfilePage from "./pages/UsersProfilePage";
 import FAQPage from "./pages/FAQPage";
 import ContactPage from "./pages/ContactPage";
 import RegisterPage from "./pages/RegisterPage";
+import LoginPage from "./pages/LoginPage";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   return (
@@ -97,6 +99,10 @@ function App() {
 
         {/* Auth */}
         <Route exact path='/pages-register' element={<RegisterPage />} />
+        <Route exact path='/pages-login' element={<LoginPage />} />
+
+        {/* Error */}
+        <Route exact path='*' element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   );
