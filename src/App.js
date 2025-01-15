@@ -26,6 +26,7 @@ import IconsBootstrapPage from "./pages/IconsBootstrapPage";
 import IconsRemixPage from "./pages/IconsRemixPage";
 import IconsBoxiconsPage from "./pages/IconsBoxiconsPage";
 import UsersProfilePage from "./pages/UsersProfilePage";
+import FAQPage from "./pages/FAQPage";
 
 function App() {
   return (
@@ -85,6 +86,9 @@ function App() {
 
         {/* Users-profile */}
         <Route exact path='/users-profile' element={<UsersProfilePage />} />
+
+        {/* Frequently Asked Questions */}
+        <Route exact path='/pages-faq' element={<FAQPage />} />
       </Routes>
     </BrowserRouter>
   );
