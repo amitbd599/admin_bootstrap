@@ -6,6 +6,7 @@ import BadgesPage from "./pages/BadgesPage";
 import BreadcrumbsPage from "./pages/BreadcrumbsPage";
 import ButtonsPage from "./pages/ButtonsPage";
 import CardsPage from "./pages/CardsPage";
+import CarouselPage from "./pages/CarouselPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         />
         <Route exact path='/components-buttons' element={<ButtonsPage />} />
         <Route exact path='/components-cards' element={<CardsPage />} />
+        <Route exact path='/components-carousel' element={<CarouselPage />} />
       </Routes>
     </BrowserRouter>
   );
