@@ -20,6 +20,7 @@ import FormsEditorsPage from "./pages/FormsEditorsPage";
 import FormsValidationPage from "./pages/FormsValidationPage";
 import TablesGeneralPage from "./pages/TablesGeneralPage";
 import TablesDataPage from "./pages/TablesDataPage";
+import ChartsChartPage from "./pages/ChartsChartPage";
 
 function App() {
   return (
@@ -67,6 +68,9 @@ function App() {
         {/* Tables */}
         <Route exact path='/tables-general' element={<TablesGeneralPage />} />
         <Route exact path='/tables-data' element={<TablesDataPage />} />
+
+        {/* charts */}
+        <Route exact path='/charts-chartjs' element={<ChartsChartPage />} />
       </Routes>
     </BrowserRouter>
   );
