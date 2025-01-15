@@ -28,6 +28,7 @@ import IconsBoxiconsPage from "./pages/IconsBoxiconsPage";
 import UsersProfilePage from "./pages/UsersProfilePage";
 import FAQPage from "./pages/FAQPage";
 import ContactPage from "./pages/ContactPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   return (
@@ -93,6 +94,9 @@ function App() {
 
         {/* Contact */}
         <Route exact path='/pages-contact' element={<ContactPage />} />
+
+        {/* Auth */}
+        <Route exact path='/pages-register' element={<RegisterPage />} />
       </Routes>
     </BrowserRouter>
   );
