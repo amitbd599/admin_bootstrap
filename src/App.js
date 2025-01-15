@@ -15,6 +15,7 @@ import ProgressPage from "./pages/ProgressPage";
 import SpinnersPage from "./pages/SpinnersPage";
 import TooltipsPage from "./pages/TooltipsPage";
 import FormsPage from "./pages/FormsPage";
+import FormsLayoutsPage from "./pages/FormsLayoutsPage";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
 
         {/* Forms */}
         <Route exact path='/forms-elements' element={<FormsPage />} />
+        <Route exact path='/forms-layouts' element={<FormsLayoutsPage />} />
       </Routes>
     </BrowserRouter>
   );
