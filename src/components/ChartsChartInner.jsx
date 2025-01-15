@@ -1,5 +1,5 @@
 import React from "react";
-import { Line, Bar, Pie } from "react-chartjs-2";
+import { Line, Bar, Pie, Doughnut } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   LineElement,
@@ -110,6 +110,35 @@ const ChartsChartInner = () => {
       },
     },
   };
+
+  const DoughnutData = {
+    labels: ["Red", "Blue", "Yellow"],
+    datasets: [
+      {
+        label: "My First Dataset",
+        data: [300, 50, 100],
+        backgroundColor: [
+          "rgb(255, 99, 132)",
+          "rgb(54, 162, 235)",
+          "rgb(255, 205, 86)",
+        ],
+        hoverOffset: 4,
+      },
+    ],
+  };
+
+  const DoughnutOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: true,
+        position: "top", // 'top', 'bottom', 'left', or 'right'
+      },
+      tooltip: {
+        enabled: true,
+      },
+    },
+  };
   return (
     <section className='section'>
       <div className='row'>
@@ -154,7 +183,11 @@ const ChartsChartInner = () => {
             <div className='card-body'>
               <h5 className='card-title'>Doughnut Chart</h5>
               {/* Doughnut Chart */}
-              <canvas id='doughnutChart' style={{ maxHeight: 400 }} />
+              <Doughnut
+                data={DoughnutData}
+                options={DoughnutOptions}
+                style={{ maxHeight: 400 }}
+              />
               {/* End Doughnut CHart */}
             </div>
           </div>
