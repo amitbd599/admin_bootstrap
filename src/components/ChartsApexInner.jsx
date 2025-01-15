@@ -196,6 +196,19 @@ const ChartsApexInner = () => {
       },
     },
   };
+  const PieChartOptions = {
+    series: [44, 55, 13, 43, 22],
+    options: {
+      chart: {
+        height: 350,
+        type: "pie",
+        toolbar: {
+          show: true,
+        },
+      },
+      labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
+    },
+  };
   return (
     <section className='section'>
       <div className='row'>
@@ -264,7 +277,12 @@ const ChartsApexInner = () => {
             <div className='card-body'>
               <h5 className='card-title'>Pie Chart</h5>
               {/* Pie Chart */}
-              <div id='pieChart' />
+              <ApexCharts
+                options={PieChartOptions.options}
+                series={PieChartOptions.series}
+                type='pie'
+                height={350}
+              />
               {/* End Pie Chart */}
             </div>
           </div>
