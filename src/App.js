@@ -7,6 +7,8 @@ import BreadcrumbsPage from "./pages/BreadcrumbsPage";
 import ButtonsPage from "./pages/ButtonsPage";
 import CardsPage from "./pages/CardsPage";
 import CarouselPage from "./pages/CarouselPage";
+import ListGroupPage from "./pages/ListGroupPage";
+import ModalPage from "./pages/ModalPage";
 
 function App() {
   return (
@@ -26,6 +28,12 @@ function App() {
         <Route exact path='/components-buttons' element={<ButtonsPage />} />
         <Route exact path='/components-cards' element={<CardsPage />} />
         <Route exact path='/components-carousel' element={<CarouselPage />} />
+        <Route
+          exact
+          path='/components-list-group'
+          element={<ListGroupPage />}
+        />
+        <Route exact path='/components-modal' element={<ModalPage />} />
       </Routes>
     </BrowserRouter>
   );
