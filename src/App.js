@@ -22,6 +22,7 @@ import TablesGeneralPage from "./pages/TablesGeneralPage";
 import TablesDataPage from "./pages/TablesDataPage";
 import ChartsChartPage from "./pages/ChartsChartPage";
 import ChartsApexPage from "./pages/ChartsApexPage";
+import IconsBootstrapPage from "./pages/IconsBootstrapPage";
 
 function App() {
   return (
@@ -73,6 +74,9 @@ function App() {
         {/* charts */}
         <Route exact path='/charts-chartjs' element={<ChartsChartPage />} />
         <Route exact path='/charts-apexcharts' element={<ChartsApexPage />} />
+
+        {/* Icons */}
+        <Route exact path='/icons-bootstrap' element={<IconsBootstrapPage />} />
       </Routes>
     </BrowserRouter>
   );

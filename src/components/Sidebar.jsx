@@ -216,12 +216,6 @@ const Sidebar = () => {
                 <span>ApexCharts</span>
               </a>
             </li>
-            <li>
-              <a href='charts-echarts.html'>
-                <i className='bi bi-circle' />
-                <span>ECharts</span>
-              </a>
-            </li>
           </ul>
         </li>
         {/* End Charts Nav */}
