@@ -159,6 +159,43 @@ const ChartsApexInner = () => {
       },
     },
   };
+
+  const BarChartOptions = {
+    series: [
+      {
+        data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380],
+      },
+    ],
+    options: {
+      chart: {
+        type: "bar",
+        height: 350,
+      },
+      plotOptions: {
+        bar: {
+          borderRadius: 4,
+          horizontal: true,
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      xaxis: {
+        categories: [
+          "South Korea",
+          "Canada",
+          "United Kingdom",
+          "Netherlands",
+          "Italy",
+          "France",
+          "Japan",
+          "United States",
+          "China",
+          "Germany",
+        ],
+      },
+    },
+  };
   return (
     <section className='section'>
       <div className='row'>
@@ -212,7 +249,12 @@ const ChartsApexInner = () => {
             <div className='card-body'>
               <h5 className='card-title'>Bar Chart</h5>
               {/* Bar Chart */}
-              <div id='barChart' />
+              <ApexCharts
+                options={BarChartOptions.options}
+                series={BarChartOptions.series}
+                type='bar'
+                height={350}
+              />
               {/* End Bar Chart */}
             </div>
           </div>
