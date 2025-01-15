@@ -9,6 +9,8 @@ import CardsPage from "./pages/CardsPage";
 import CarouselPage from "./pages/CarouselPage";
 import ListGroupPage from "./pages/ListGroupPage";
 import ModalPage from "./pages/ModalPage";
+import TabsPage from "./pages/TabsPage";
+import PaginationPage from "./pages/PaginationPage";
 
 function App() {
   return (
@@ -34,6 +36,12 @@ function App() {
           element={<ListGroupPage />}
         />
         <Route exact path='/components-modal' element={<ModalPage />} />
+        <Route exact path='/components-tabs' element={<TabsPage />} />
+        <Route
+          exact
+          path='/components-pagination'
+          element={<PaginationPage />}
+        />
       </Routes>
     </BrowserRouter>
   );
