@@ -1,309 +1,310 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
     <aside id='sidebar' className='sidebar'>
       <ul className='sidebar-nav' id='sidebar-nav'>
         <li className='nav-item'>
-          <a className='nav-link ' href='index.html'>
+          <Link className='nav-link ' to='/'>
             <i className='bi bi-grid' />
             <span>Dashboard</span>
-          </a>
+          </Link>
         </li>
         {/* End Dashboard Nav */}
         <li className='nav-item'>
-          <a
+          <Link
             className='nav-link collapsed'
             data-bs-target='#components-nav'
             data-bs-toggle='collapse'
-            href='#'
+            to='#'
           >
             <i className='bi bi-menu-button-wide' />
             <span>Components</span>
             <i className='bi bi-chevron-down ms-auto' />
-          </a>
+          </Link>
           <ul
             id='components-nav'
             className='nav-content collapse '
             data-bs-parent='#sidebar-nav'
           >
             <li>
-              <a href='components-alerts.html'>
+              <NavLink to='/components-alerts'>
                 <i className='bi bi-circle' />
                 <span>Alerts</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='components-accordion.html'>
+              <NavLink to='/components-accordion'>
                 <i className='bi bi-circle' />
                 <span>Accordion</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='components-badges.html'>
+              <NavLink to='/components-badges'>
                 <i className='bi bi-circle' />
                 <span>Badges</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='components-breadcrumbs.html'>
+              <NavLink to='/components-breadcrumbs'>
                 <i className='bi bi-circle' />
                 <span>Breadcrumbs</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='components-buttons.html'>
+              <NavLink to='/components-buttons'>
                 <i className='bi bi-circle' />
                 <span>Buttons</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='components-cards.html'>
+              <NavLink to='/components-cards'>
                 <i className='bi bi-circle' />
                 <span>Cards</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='components-carousel.html'>
+              <NavLink to='/components-carousel'>
                 <i className='bi bi-circle' />
                 <span>Carousel</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='components-list-group.html'>
+              <NavLink to='/components-list-group'>
                 <i className='bi bi-circle' />
                 <span>List group</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='components-modal.html'>
+              <NavLink to='/components-modal'>
                 <i className='bi bi-circle' />
                 <span>Modal</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='components-tabs.html'>
+              <NavLink to='/components-tabs'>
                 <i className='bi bi-circle' />
                 <span>Tabs</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='components-pagination.html'>
+              <NavLink to='/components-pagination'>
                 <i className='bi bi-circle' />
                 <span>Pagination</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='components-progress.html'>
+              <NavLink to='/components-progress'>
                 <i className='bi bi-circle' />
                 <span>Progress</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='components-spinners.html'>
+              <NavLink to='/components-spinners'>
                 <i className='bi bi-circle' />
                 <span>Spinners</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='components-tooltips.html'>
+              <NavLink to='/components-tooltips'>
                 <i className='bi bi-circle' />
                 <span>Tooltips</span>
-              </a>
+              </NavLink>
             </li>
           </ul>
         </li>
         {/* End Components Nav */}
         <li className='nav-item'>
-          <a
+          <Link
             className='nav-link collapsed'
             data-bs-target='#forms-nav'
             data-bs-toggle='collapse'
-            href='#'
+            to='#'
           >
             <i className='bi bi-journal-text' />
             <span>Forms</span>
             <i className='bi bi-chevron-down ms-auto' />
-          </a>
+          </Link>
           <ul
             id='forms-nav'
             className='nav-content collapse '
             data-bs-parent='#sidebar-nav'
           >
             <li>
-              <a href='forms-elements.html'>
+              <NavLink to='/forms-elements'>
                 <i className='bi bi-circle' />
                 <span>Form Elements</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='forms-layouts.html'>
+              <NavLink to='/forms-layouts'>
                 <i className='bi bi-circle' />
                 <span>Form Layouts</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='forms-editors.html'>
+              <NavLink to='/forms-editors'>
                 <i className='bi bi-circle' />
                 <span>Form Editors</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='forms-validation.html'>
+              <NavLink to='/forms-validation'>
                 <i className='bi bi-circle' />
                 <span>Form Validation</span>
-              </a>
+              </NavLink>
             </li>
           </ul>
         </li>
         {/* End Forms Nav */}
         <li className='nav-item'>
-          <a
+          <Link
             className='nav-link collapsed'
             data-bs-target='#tables-nav'
             data-bs-toggle='collapse'
-            href='#'
+            to='#'
           >
             <i className='bi bi-layout-text-window-reverse' />
             <span>Tables</span>
             <i className='bi bi-chevron-down ms-auto' />
-          </a>
+          </Link>
           <ul
             id='tables-nav'
             className='nav-content collapse '
             data-bs-parent='#sidebar-nav'
           >
             <li>
-              <a href='tables-general.html'>
+              <NavLink to='/tables-general'>
                 <i className='bi bi-circle' />
                 <span>General Tables</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='tables-data.html'>
+              <NavLink to='/tables-data'>
                 <i className='bi bi-circle' />
                 <span>Data Tables</span>
-              </a>
+              </NavLink>
             </li>
           </ul>
         </li>
         {/* End Tables Nav */}
         <li className='nav-item'>
-          <a
+          <Link
             className='nav-link collapsed'
             data-bs-target='#charts-nav'
             data-bs-toggle='collapse'
-            href='#'
+            to='#'
           >
             <i className='bi bi-bar-chart' />
             <span>Charts</span>
             <i className='bi bi-chevron-down ms-auto' />
-          </a>
+          </Link>
           <ul
             id='charts-nav'
             className='nav-content collapse '
             data-bs-parent='#sidebar-nav'
           >
             <li>
-              <a href='charts-chartjs.html'>
+              <NavLink to='/charts-chartjs'>
                 <i className='bi bi-circle' />
                 <span>Chart.js</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='charts-apexcharts.html'>
+              <NavLink to='/charts-apexcharts'>
                 <i className='bi bi-circle' />
                 <span>ApexCharts</span>
-              </a>
+              </NavLink>
             </li>
           </ul>
         </li>
         {/* End Charts Nav */}
         <li className='nav-item'>
-          <a
+          <Link
             className='nav-link collapsed'
             data-bs-target='#icons-nav'
             data-bs-toggle='collapse'
-            href='#'
+            to='#'
           >
             <i className='bi bi-gem' />
             <span>Icons</span>
             <i className='bi bi-chevron-down ms-auto' />
-          </a>
+          </Link>
           <ul
             id='icons-nav'
             className='nav-content collapse '
             data-bs-parent='#sidebar-nav'
           >
             <li>
-              <a href='icons-bootstrap.html'>
+              <NavLink to='/icons-bootstrap'>
                 <i className='bi bi-circle' />
                 <span>Bootstrap Icons</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='icons-remix.html'>
+              <NavLink to='/icons-remix'>
                 <i className='bi bi-circle' />
                 <span>Remix Icons</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='icons-boxicons.html'>
+              <NavLink to='/icons-boxicons'>
                 <i className='bi bi-circle' />
                 <span>Boxicons</span>
-              </a>
+              </NavLink>
             </li>
           </ul>
         </li>
         {/* End Icons Nav */}
         <li className='nav-heading'>Pages</li>
         <li className='nav-item'>
-          <a className='nav-link collapsed' href='users-profile.html'>
+          <Link className='nav-link collapsed' to='/users-profile'>
             <i className='bi bi-person' />
             <span>Profile</span>
-          </a>
+          </Link>
         </li>
         {/* End Profile Page Nav */}
         <li className='nav-item'>
-          <a className='nav-link collapsed' href='pages-faq.html'>
+          <Link className='nav-link collapsed' to='/pages-faq'>
             <i className='bi bi-question-circle' />
             <span>F.A.Q</span>
-          </a>
+          </Link>
         </li>
         {/* End F.A.Q Page Nav */}
         <li className='nav-item'>
-          <a className='nav-link collapsed' href='pages-contact.html'>
+          <Link className='nav-link collapsed' to='/pages-contact'>
             <i className='bi bi-envelope' />
             <span>Contact</span>
-          </a>
+          </Link>
         </li>
         {/* End Contact Page Nav */}
         <li className='nav-item'>
-          <a className='nav-link collapsed' href='pages-register.html'>
+          <Link className='nav-link collapsed' to='/pages-register'>
             <i className='bi bi-card-list' />
             <span>Register</span>
-          </a>
+          </Link>
         </li>
         {/* End Register Page Nav */}
         <li className='nav-item'>
-          <a className='nav-link collapsed' href='pages-login.html'>
+          <Link className='nav-link collapsed' to='/pages-login'>
             <i className='bi bi-box-arrow-in-right' />
             <span>Login</span>
-          </a>
+          </Link>
         </li>
         {/* End Login Page Nav */}
         <li className='nav-item'>
-          <a className='nav-link collapsed' href='pages-error-404.html'>
+          <Link className='nav-link collapsed' to='/pages-error-404'>
             <i className='bi bi-dash-circle' />
             <span>Error 404</span>
-          </a>
+          </Link>
         </li>
         {/* End Error 404 Page Nav */}
         <li className='nav-item'>
-          <a className='nav-link collapsed' href='pages-blank.html'>
+          <Link className='nav-link collapsed' to='/pages-blank'>
             <i className='bi bi-file-earmark' />
             <span>Blank</span>
-          </a>
+          </Link>
         </li>
         {/* End Blank Page Nav */}
       </ul>
