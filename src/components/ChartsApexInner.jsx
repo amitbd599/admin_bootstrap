@@ -260,6 +260,40 @@ const ChartsApexInner = () => {
       },
     },
   };
+
+  const RadialChartOptions = {
+    series: [44, 55, 67, 83],
+    options: {
+      chart: {
+        height: 350,
+        type: "radialBar",
+        toolbar: {
+          show: true,
+        },
+      },
+      plotOptions: {
+        radialBar: {
+          dataLabels: {
+            name: {
+              fontSize: "22px",
+            },
+            value: {
+              fontSize: "16px",
+            },
+            total: {
+              show: true,
+              label: "Total",
+              formatter: function (w) {
+                // Custom formatter for total
+                return 249;
+              },
+            },
+          },
+        },
+      },
+      labels: ["Apples", "Oranges", "Bananas", "Berries"],
+    },
+  };
   return (
     <section className='section'>
       <div className='row'>
@@ -388,7 +422,12 @@ const ChartsApexInner = () => {
             <div className='card-body'>
               <h5 className='card-title'>Radial Bar Chart</h5>
               {/* Radial Bar Chart */}
-              <div id='radialBarChart' />
+              <ApexCharts
+                options={RadialChartOptions.options}
+                series={RadialChartOptions.series}
+                type='radialBar'
+                height={350}
+              />
               {/* End Radial Bar Chart */}
             </div>
           </div>
