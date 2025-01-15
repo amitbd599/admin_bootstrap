@@ -209,6 +209,20 @@ const ChartsApexInner = () => {
       labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
     },
   };
+
+  const DonutChartOptions = {
+    series: [44, 55, 13, 43, 22],
+    options: {
+      chart: {
+        height: 350,
+        type: "donut",
+        toolbar: {
+          show: true,
+        },
+      },
+      labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
+    },
+  };
   return (
     <section className='section'>
       <div className='row'>
@@ -292,7 +306,12 @@ const ChartsApexInner = () => {
             <div className='card-body'>
               <h5 className='card-title'>Donut Chart</h5>
               {/* Donut Chart */}
-              <div id='donutChart' />
+              <ApexCharts
+                options={DonutChartOptions.options}
+                series={DonutChartOptions.series}
+                type='donut'
+                height={350}
+              />
               {/* End Donut Chart */}
             </div>
           </div>
@@ -302,7 +321,7 @@ const ChartsApexInner = () => {
             <div className='card-body'>
               <h5 className='card-title'>Radar Chart</h5>
               {/* Radar Chart */}
-              <div id='radarChart' />
+
               {/* End Radar Chart */}
             </div>
           </div>
