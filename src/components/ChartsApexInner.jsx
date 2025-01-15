@@ -223,6 +223,24 @@ const ChartsApexInner = () => {
       labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
     },
   };
+
+  const RadarChartOptions = {
+    series: [
+      {
+        name: "Series 1",
+        data: [80, 50, 30, 40, 100, 20],
+      },
+    ],
+    options: {
+      chart: {
+        height: 350,
+        type: "radar",
+      },
+      xaxis: {
+        categories: ["January", "February", "March", "April", "May", "June"],
+      },
+    },
+  };
   return (
     <section className='section'>
       <div className='row'>
@@ -321,7 +339,12 @@ const ChartsApexInner = () => {
             <div className='card-body'>
               <h5 className='card-title'>Radar Chart</h5>
               {/* Radar Chart */}
-
+              <ApexCharts
+                options={RadarChartOptions.options}
+                series={RadarChartOptions.series}
+                type='radar'
+                height={350}
+              />
               {/* End Radar Chart */}
             </div>
           </div>
