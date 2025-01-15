@@ -31,6 +31,7 @@ import ContactPage from "./pages/ContactPage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import ErrorPage from "./pages/ErrorPage";
+import BlankPage from "./pages/BlankPage";
 
 function App() {
   return (
@@ -100,6 +101,9 @@ function App() {
         {/* Auth */}
         <Route exact path='/pages-register' element={<RegisterPage />} />
         <Route exact path='/pages-login' element={<LoginPage />} />
+
+        {/* Blank */}
+        <Route exact path='/pages-blank' element={<BlankPage />} />
 
         {/* Error */}
         <Route exact path='*' element={<ErrorPage />} />

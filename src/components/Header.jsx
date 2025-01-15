@@ -1,17 +1,98 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [isSidebarToggled, setIsSidebarToggled] = useState(false);
+
+  const handleToggleSidebar = () => {
+    setIsSidebarToggled(!isSidebarToggled);
+  };
+
+  useEffect(() => {
+    if (isSidebarToggled) {
+      document.body.classList.add("toggle-sidebar");
+    } else {
+      document.body.classList.remove("toggle-sidebar");
+    }
+  }, [isSidebarToggled]);
+
+  useEffect(() => {
+    const selectHeader = document.querySelector("#header");
+
+    const headerScrolled = () => {
+      if (window.scrollY > 100) {
+        selectHeader.classList.add("header-scrolled");
+      } else {
+        selectHeader.classList.remove("header-scrolled");
+      }
+    };
+
+    // Add event listeners
+    window.addEventListener("load", headerScrolled);
+    window.addEventListener("scroll", headerScrolled);
+
+    // Clean up event listeners on component unmount
+    return () => {
+      window.removeEventListener("load", headerScrolled);
+      window.removeEventListener("scroll", headerScrolled);
+    };
+  }, []);
+
+  useEffect(() => {
+    const navbarLinks = document.querySelectorAll("#navbar .scrollto");
+
+    const navbarLinksActive = () => {
+      let position = window.scrollY + 200;
+
+      navbarLinks.forEach((navbarLink) => {
+        if (!navbarLink.hash) return;
+        let section = document.querySelector(navbarLink.hash);
+        if (!section) return;
+
+        if (
+          position >= section.offsetTop &&
+          position <= section.offsetTop + section.offsetHeight
+        ) {
+          navbarLink.classList.add("active");
+        } else {
+          navbarLink.classList.remove("active");
+        }
+      });
+    };
+
+    // Add event listener for scroll and load events
+    window.addEventListener("load", navbarLinksActive);
+    window.addEventListener("scroll", navbarLinksActive);
+
+    // Cleanup event listeners when the component is unmounted
+    return () => {
+      window.removeEventListener("load", navbarLinksActive);
+      window.removeEventListener("scroll", navbarLinksActive);
+    };
+  }, []);
+
+  const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
+
+  const handleToggleSearchBar = () => {
+    setIsSearchBarVisible(!isSearchBarVisible);
+  };
+
   return (
     <header id='header' className='header fixed-top d-flex align-items-center'>
       <div className='d-flex align-items-center justify-content-between'>
-        <a href='index.html' className='logo d-flex align-items-center'>
+        <Link to='/index' className='logo d-flex align-items-center'>
           <img src='assets/img/logo.png' alt='' />
           <span className='d-none d-lg-block'>NiceAdmin</span>
-        </a>
-        <i className='bi bi-list toggle-sidebar-btn' />
+        </Link>
+        <i
+          className='bi bi-list toggle-sidebar-btn'
+          onClick={handleToggleSidebar}
+        />
       </div>
       {/* End Logo */}
-      <div className='search-bar'>
+      <div
+        className={`search-bar ${isSearchBarVisible ? "search-bar-show" : ""}`}
+      >
         <form
           className='search-form d-flex align-items-center'
           method='POST'
@@ -32,25 +113,33 @@ const Header = () => {
       <nav className='header-nav ms-auto'>
         <ul className='d-flex align-items-center'>
           <li className='nav-item d-block d-lg-none'>
-            <a className='nav-link nav-icon search-bar-toggle ' href='#'>
+            <Link
+              className='nav-link nav-icon search-bar-toggle '
+              to='#'
+              onClick={handleToggleSearchBar}
+            >
               <i className='bi bi-search' />
-            </a>
+            </Link>
           </li>
           {/* End Search Icon*/}
           <li className='nav-item dropdown'>
-            <a className='nav-link nav-icon' href='#' data-bs-toggle='dropdown'>
+            <Link
+              className='nav-link nav-icon'
+              to='#'
+              data-bs-toggle='dropdown'
+            >
               <i className='bi bi-bell' />
               <span className='badge bg-primary badge-number'>4</span>
-            </a>
+            </Link>
             {/* End Notification Icon */}
             <ul className='dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications'>
               <li className='dropdown-header'>
                 You have 4 new notifications
-                <a href='#'>
+                <Link to='#'>
                   <span className='badge rounded-pill bg-primary p-2 ms-2'>
                     View all
                   </span>
-                </a>
+                </Link>
               </li>
               <li>
                 <hr className='dropdown-divider' />
@@ -100,32 +189,36 @@ const Header = () => {
                 <hr className='dropdown-divider' />
               </li>
               <li className='dropdown-footer'>
-                <a href='#'>Show all notifications</a>
+                <Link to='#'>Show all notifications</Link>
               </li>
             </ul>
             {/* End Notification Dropdown Items */}
           </li>
           {/* End Notification Nav */}
           <li className='nav-item dropdown'>
-            <a className='nav-link nav-icon' href='#' data-bs-toggle='dropdown'>
+            <Link
+              className='nav-link nav-icon'
+              to='#'
+              data-bs-toggle='dropdown'
+            >
               <i className='bi bi-chat-left-text' />
               <span className='badge bg-success badge-number'>3</span>
-            </a>
+            </Link>
             {/* End Messages Icon */}
             <ul className='dropdown-menu dropdown-menu-end dropdown-menu-arrow messages'>
               <li className='dropdown-header'>
                 You have 3 new messages
-                <a href='#'>
+                <Link to='#'>
                   <span className='badge rounded-pill bg-primary p-2 ms-2'>
                     View all
                   </span>
-                </a>
+                </Link>
               </li>
               <li>
                 <hr className='dropdown-divider' />
               </li>
               <li className='message-item'>
-                <a href='#'>
+                <Link to='#'>
                   <img
                     src='assets/img/messages-1.jpg'
                     alt=''
@@ -139,13 +232,13 @@ const Header = () => {
                     </p>
                     <p>4 hrs. ago</p>
                   </div>
-                </a>
+                </Link>
               </li>
               <li>
                 <hr className='dropdown-divider' />
               </li>
               <li className='message-item'>
-                <a href='#'>
+                <Link to='#'>
                   <img
                     src='assets/img/messages-2.jpg'
                     alt=''
@@ -159,13 +252,13 @@ const Header = () => {
                     </p>
                     <p>6 hrs. ago</p>
                   </div>
-                </a>
+                </Link>
               </li>
               <li>
                 <hr className='dropdown-divider' />
               </li>
               <li className='message-item'>
-                <a href='#'>
+                <Link to='#'>
                   <img
                     src='assets/img/messages-3.jpg'
                     alt=''
@@ -179,22 +272,22 @@ const Header = () => {
                     </p>
                     <p>8 hrs. ago</p>
                   </div>
-                </a>
+                </Link>
               </li>
               <li>
                 <hr className='dropdown-divider' />
               </li>
               <li className='dropdown-footer'>
-                <a href='#'>Show all messages</a>
+                <Link to='#'>Show all messages</Link>
               </li>
             </ul>
             {/* End Messages Dropdown Items */}
           </li>
           {/* End Messages Nav */}
           <li className='nav-item dropdown pe-3'>
-            <a
+            <Link
               className='nav-link nav-profile d-flex align-items-center pe-0'
-              href='#'
+              to='#'
               data-bs-toggle='dropdown'
             >
               <img
@@ -205,7 +298,7 @@ const Header = () => {
               <span className='d-none d-md-block dropdown-toggle ps-2'>
                 K. Anderson
               </span>
-            </a>
+            </Link>
             {/* End Profile Iamge Icon */}
             <ul className='dropdown-menu dropdown-menu-end dropdown-menu-arrow profile'>
               <li className='dropdown-header'>
@@ -216,46 +309,49 @@ const Header = () => {
                 <hr className='dropdown-divider' />
               </li>
               <li>
-                <a
+                <Link
                   className='dropdown-item d-flex align-items-center'
-                  href='users-profile.html'
+                  to='/users-profile'
                 >
                   <i className='bi bi-person' />
                   <span>My Profile</span>
-                </a>
+                </Link>
               </li>
               <li>
                 <hr className='dropdown-divider' />
               </li>
               <li>
-                <a
+                <Link
                   className='dropdown-item d-flex align-items-center'
-                  href='users-profile.html'
+                  to='/users-profile'
                 >
                   <i className='bi bi-gear' />
                   <span>Account Settings</span>
-                </a>
+                </Link>
               </li>
               <li>
                 <hr className='dropdown-divider' />
               </li>
               <li>
-                <a
+                <Link
                   className='dropdown-item d-flex align-items-center'
-                  href='pages-faq.html'
+                  to='/pages-faq'
                 >
                   <i className='bi bi-question-circle' />
                   <span>Need Help?</span>
-                </a>
+                </Link>
               </li>
               <li>
                 <hr className='dropdown-divider' />
               </li>
               <li>
-                <a className='dropdown-item d-flex align-items-center' href='#'>
+                <Link
+                  className='dropdown-item d-flex align-items-center'
+                  to='#'
+                >
                   <i className='bi bi-box-arrow-right' />
                   <span>Sign Out</span>
-                </a>
+                </Link>
               </li>
             </ul>
             {/* End Profile Dropdown Items */}
