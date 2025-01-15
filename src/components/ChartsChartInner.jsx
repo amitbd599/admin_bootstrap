@@ -1,6 +1,5 @@
 import React from "react";
-import { Line } from "react-chartjs-2";
-import { Bar } from "react-chartjs-2";
+import { Line, Bar, Pie } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   LineElement,
@@ -8,6 +7,9 @@ import {
   LinearScale,
   CategoryScale,
   BarElement,
+  ArcElement,
+  Tooltip,
+  Legend,
 } from "chart.js";
 
 // Register the required components
@@ -15,8 +17,11 @@ ChartJS.register(
   LineElement,
   PointElement,
   BarElement,
+  ArcElement,
   LinearScale,
-  CategoryScale
+  CategoryScale,
+  Tooltip,
+  Legend
 );
 
 const ChartsChartInner = () => {
@@ -77,6 +82,34 @@ const ChartsChartInner = () => {
       },
     },
   };
+  const PieData = {
+    labels: ["Red", "Blue", "Yellow"],
+    datasets: [
+      {
+        label: "My First Dataset",
+        data: [300, 50, 100],
+        backgroundColor: [
+          "rgb(255, 99, 132)",
+          "rgb(54, 162, 235)",
+          "rgb(255, 205, 86)",
+        ],
+        hoverOffset: 4,
+      },
+    ],
+  };
+
+  const PieOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: true, // Ensure the legend is displayed
+        position: "top",
+      },
+      tooltip: {
+        enabled: true,
+      },
+    },
+  };
   return (
     <section className='section'>
       <div className='row'>
@@ -107,7 +140,11 @@ const ChartsChartInner = () => {
             <div className='card-body'>
               <h5 className='card-title'>Pie Chart</h5>
               {/* Pie Chart */}
-              <canvas id='pieChart' style={{ maxHeight: 400 }} />
+              <Pie
+                data={PieData}
+                options={PieOptions}
+                style={{ maxHeight: 400 }}
+              />
               {/* End Pie CHart */}
             </div>
           </div>
