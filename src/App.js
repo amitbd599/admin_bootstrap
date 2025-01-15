@@ -25,6 +25,7 @@ import ChartsApexPage from "./pages/ChartsApexPage";
 import IconsBootstrapPage from "./pages/IconsBootstrapPage";
 import IconsRemixPage from "./pages/IconsRemixPage";
 import IconsBoxiconsPage from "./pages/IconsBoxiconsPage";
+import UsersProfilePage from "./pages/UsersProfilePage";
 
 function App() {
   return (
@@ -81,6 +82,9 @@ function App() {
         <Route exact path='/icons-bootstrap' element={<IconsBootstrapPage />} />
         <Route exact path='/icons-remix' element={<IconsRemixPage />} />
         <Route exact path='/icons-boxicons' element={<IconsBoxiconsPage />} />
+
+        {/* Users-profile */}
+        <Route exact path='/users-profile' element={<UsersProfilePage />} />
       </Routes>
     </BrowserRouter>
   );
