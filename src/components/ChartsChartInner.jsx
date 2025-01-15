@@ -1,5 +1,13 @@
 import React from "react";
-import { Line, Bar, Pie, Doughnut, Radar, PolarArea } from "react-chartjs-2";
+import {
+  Line,
+  Bar,
+  Pie,
+  Doughnut,
+  Radar,
+  PolarArea,
+  Bubble,
+} from "react-chartjs-2";
 import {
   Chart as ChartJS,
   LineElement,
@@ -259,6 +267,47 @@ const ChartsChartInner = () => {
     },
   };
 
+  const BubbleData = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+      {
+        label: "Dataset 1",
+        data: [
+          { x: 20, y: 30, r: 15 },
+          { x: 40, y: 10, r: 10 },
+          { x: 15, y: 37, r: 12 },
+          { x: 32, y: 42, r: 33 },
+        ],
+        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+      {
+        label: "Dataset 2",
+        data: [
+          { x: 40, y: 25, r: 22 },
+          { x: 24, y: 47, r: 11 },
+          { x: 65, y: 11, r: 14 },
+          { x: 11, y: 55, r: 8 },
+        ],
+        borderColor: "rgb(75, 192, 192)",
+        backgroundColor: "rgba(75, 192, 192, 0.5)",
+      },
+    ],
+  };
+
+  const BubbleOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "Chart.js Bubble Chart",
+      },
+    },
+  };
+
   return (
     <section className='section'>
       <div className='row'>
@@ -359,7 +408,11 @@ const ChartsChartInner = () => {
             <div className='card-body'>
               <h5 className='card-title'>Bubble Chart</h5>
               {/* Bubble Chart */}
-              <canvas id='bubbleChart' style={{ maxHeight: 400 }} />
+              <Bubble
+                data={BubbleData}
+                options={BubbleOptions}
+                style={{ maxHeight: 400 }}
+              />
               {/* End Bubble Chart */}
             </div>
           </div>
