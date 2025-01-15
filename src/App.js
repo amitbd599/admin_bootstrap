@@ -19,6 +19,7 @@ import FormsLayoutsPage from "./pages/FormsLayoutsPage";
 import FormsEditorsPage from "./pages/FormsEditorsPage";
 import FormsValidationPage from "./pages/FormsValidationPage";
 import TablesGeneralPage from "./pages/TablesGeneralPage";
+import TablesDataPage from "./pages/TablesDataPage";
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
         />
         {/* Tables */}
         <Route exact path='/tables-general' element={<TablesGeneralPage />} />
+        <Route exact path='/tables-data' element={<TablesDataPage />} />
       </Routes>
     </BrowserRouter>
   );
