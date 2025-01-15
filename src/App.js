@@ -23,6 +23,7 @@ import TablesDataPage from "./pages/TablesDataPage";
 import ChartsChartPage from "./pages/ChartsChartPage";
 import ChartsApexPage from "./pages/ChartsApexPage";
 import IconsBootstrapPage from "./pages/IconsBootstrapPage";
+import IconsRemixPage from "./pages/IconsRemixPage";
 
 function App() {
   return (
@@ -77,6 +78,7 @@ function App() {
 
         {/* Icons */}
         <Route exact path='/icons-bootstrap' element={<IconsBootstrapPage />} />
+        <Route exact path='/icons-remix' element={<IconsRemixPage />} />
       </Routes>
     </BrowserRouter>
   );
