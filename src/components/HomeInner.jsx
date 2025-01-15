@@ -1,7 +1,8 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
+import ReactECharts from "echarts-for-react";
 const HomeInner = () => {
-  const chartOptions = {
+  const reportsChartOptions = {
     series: [
       {
         name: "Sales",
@@ -60,6 +61,37 @@ const HomeInner = () => {
         format: "dd/MM/yy HH:mm",
       },
     },
+  };
+  const budgetChartOptions = {
+    legend: {
+      data: ["Allocated Budget", "Actual Spending"],
+    },
+    radar: {
+      indicator: [
+        { name: "Sales", max: 6500 },
+        { name: "Administration", max: 16000 },
+        { name: "Information Technology", max: 30000 },
+        { name: "Customer Support", max: 38000 },
+        { name: "Development", max: 52000 },
+        { name: "Marketing", max: 25000 },
+      ],
+    },
+    series: [
+      {
+        name: "Budget vs spending",
+        type: "radar",
+        data: [
+          {
+            value: [4200, 3000, 20000, 35000, 50000, 18000],
+            name: "Allocated Budget",
+          },
+          {
+            value: [5000, 14000, 28000, 26000, 42000, 21000],
+            name: "Actual Spending",
+          },
+        ],
+      },
+    ],
   };
   return (
     <section className='section dashboard'>
@@ -253,8 +285,8 @@ const HomeInner = () => {
 
                   <div id='reportsChart'>
                     <ReactApexChart
-                      options={chartOptions}
-                      series={chartOptions.series}
+                      options={reportsChartOptions}
+                      series={reportsChartOptions.series}
                       type='area'
                       height={350}
                     />
@@ -640,11 +672,12 @@ const HomeInner = () => {
               <h5 className='card-title'>
                 Budget Report <span>| This Month</span>
               </h5>
-              <div
-                id='budgetChart'
-                style={{ minHeight: 400 }}
-                className='echart'
-              />
+              <div style={{ minHeight: 400 }} id='budgetChart'>
+                <ReactECharts
+                  option={budgetChartOptions}
+                  style={{ height: "400px" }}
+                />
+              </div>
             </div>
           </div>
           {/* End Budget Report */}
