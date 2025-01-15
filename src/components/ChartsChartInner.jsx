@@ -1,5 +1,5 @@
 import React from "react";
-import { Line, Bar, Pie, Doughnut } from "react-chartjs-2";
+import { Line, Bar, Pie, Doughnut, Radar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   LineElement,
@@ -10,6 +10,8 @@ import {
   ArcElement,
   Tooltip,
   Legend,
+  RadialLinearScale,
+  Filler,
 } from "chart.js";
 
 // Register the required components
@@ -21,7 +23,9 @@ ChartJS.register(
   LinearScale,
   CategoryScale,
   Tooltip,
-  Legend
+  Legend,
+  RadialLinearScale,
+  Filler
 );
 
 const ChartsChartInner = () => {
@@ -139,6 +143,57 @@ const ChartsChartInner = () => {
       },
     },
   };
+
+  const RadarData = {
+    labels: [
+      "Eating",
+      "Drinking",
+      "Sleeping",
+      "Designing",
+      "Coding",
+      "Cycling",
+      "Running",
+    ],
+    datasets: [
+      {
+        label: "First Dataset",
+        data: [65, 59, 90, 81, 56, 55, 40],
+        fill: true,
+        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        borderColor: "rgb(255, 99, 132)",
+        pointBackgroundColor: "rgb(255, 99, 132)",
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgb(255, 99, 132)",
+      },
+      {
+        label: "Second Dataset",
+        data: [28, 48, 40, 19, 96, 27, 100],
+        fill: true,
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        borderColor: "rgb(54, 162, 235)",
+        pointBackgroundColor: "rgb(54, 162, 235)",
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgb(54, 162, 235)",
+      },
+    ],
+  };
+
+  const RadarOptions = {
+    elements: {
+      line: {
+        borderWidth: 3,
+      },
+    },
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+    },
+  };
+
   return (
     <section className='section'>
       <div className='row'>
@@ -197,7 +252,11 @@ const ChartsChartInner = () => {
             <div className='card-body'>
               <h5 className='card-title'>Radar Chart</h5>
               {/* Radar Chart */}
-              <canvas id='radarChart' style={{ maxHeight: 400 }} />
+              <Radar
+                data={RadarData}
+                options={RadarOptions}
+                style={{ maxHeight: 400 }}
+              />
               {/* End Radar CHart */}
             </div>
           </div>
