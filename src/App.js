@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import ComponentsAlertsPage from "./pages/ComponentsAlertsPage";
+import AlertsPage from "./pages/AlertsPage";
+import AccordionPage from "./pages/AccordionPage";
 
 function App() {
   return (
@@ -9,11 +10,8 @@ function App() {
         <Route exact path='/' element={<HomePage />} />
 
         {/* Components */}
-        <Route
-          exact
-          path='/components-alerts'
-          element={<ComponentsAlertsPage />}
-        />
+        <Route exact path='/components-alerts' element={<AlertsPage />} />
+        <Route exact path='/components-accordion' element={<AccordionPage />} />
       </Routes>
     </BrowserRouter>
   );

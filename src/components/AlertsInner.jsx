@@ -1,6 +1,6 @@
 import React from "react";
 
-const ComponentsAlertsInner = () => {
+const AlertsInner = () => {
   return (
     <section className='section'>
       <div className='row'>
@@ -593,4 +593,4 @@ const ComponentsAlertsInner = () => {
   );
 };
 
-export default ComponentsAlertsInner;
+export default AlertsInner;

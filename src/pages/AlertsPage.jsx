@@ -1,9 +1,9 @@
 import React from "react";
 import MasterLayout from "../layout/MasterLayout";
 import Breadcrumb from "../components/Breadcrumb";
-import ComponentsAlertsInner from "../components/ComponentsAlertsInner";
+import ComponentsAlertsInner from "../components/AlertsInner";
 
-const ComponentsAlertsPage = () => {
+const AlertsPage = () => {
   return (
     <MasterLayout>
       {/* Breadcrumb */}
@@ -15,4 +15,4 @@ const ComponentsAlertsPage = () => {
   );
 };
 
-export default ComponentsAlertsPage;
+export default AlertsPage;
