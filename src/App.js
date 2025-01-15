@@ -17,6 +17,7 @@ import TooltipsPage from "./pages/TooltipsPage";
 import FormsPage from "./pages/FormsPage";
 import FormsLayoutsPage from "./pages/FormsLayoutsPage";
 import FormsEditorsPage from "./pages/FormsEditorsPage";
+import FormsValidationPage from "./pages/FormsValidationPage";
 
 function App() {
   return (
@@ -56,6 +57,11 @@ function App() {
         <Route exact path='/forms-elements' element={<FormsPage />} />
         <Route exact path='/forms-layouts' element={<FormsLayoutsPage />} />
         <Route exact path='/forms-editors' element={<FormsEditorsPage />} />
+        <Route
+          exact
+          path='/forms-validation'
+          element={<FormsValidationPage />}
+        />
       </Routes>
     </BrowserRouter>
   );
