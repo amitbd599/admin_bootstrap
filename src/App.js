@@ -16,6 +16,7 @@ import SpinnersPage from "./pages/SpinnersPage";
 import TooltipsPage from "./pages/TooltipsPage";
 import FormsPage from "./pages/FormsPage";
 import FormsLayoutsPage from "./pages/FormsLayoutsPage";
+import FormsEditorsPage from "./pages/FormsEditorsPage";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
         {/* Forms */}
         <Route exact path='/forms-elements' element={<FormsPage />} />
         <Route exact path='/forms-layouts' element={<FormsLayoutsPage />} />
+        <Route exact path='/forms-editors' element={<FormsEditorsPage />} />
       </Routes>
     </BrowserRouter>
   );
