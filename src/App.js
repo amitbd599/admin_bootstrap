@@ -18,6 +18,7 @@ import FormsPage from "./pages/FormsPage";
 import FormsLayoutsPage from "./pages/FormsLayoutsPage";
 import FormsEditorsPage from "./pages/FormsEditorsPage";
 import FormsValidationPage from "./pages/FormsValidationPage";
+import TablesGeneralPage from "./pages/TablesGeneralPage";
 
 function App() {
   return (
@@ -62,6 +63,8 @@ function App() {
           path='/forms-validation'
           element={<FormsValidationPage />}
         />
+        {/* Tables */}
+        <Route exact path='/tables-general' element={<TablesGeneralPage />} />
       </Routes>
     </BrowserRouter>
   );
