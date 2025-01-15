@@ -5,6 +5,7 @@ import AccordionPage from "./pages/AccordionPage";
 import BadgesPage from "./pages/BadgesPage";
 import BreadcrumbsPage from "./pages/BreadcrumbsPage";
 import ButtonsPage from "./pages/ButtonsPage";
+import CardsPage from "./pages/CardsPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           element={<BreadcrumbsPage />}
         />
         <Route exact path='/components-buttons' element={<ButtonsPage />} />
+        <Route exact path='/components-cards' element={<CardsPage />} />
       </Routes>
     </BrowserRouter>
   );
