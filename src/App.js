@@ -4,6 +4,7 @@ import AlertsPage from "./pages/AlertsPage";
 import AccordionPage from "./pages/AccordionPage";
 import BadgesPage from "./pages/BadgesPage";
 import BreadcrumbsPage from "./pages/BreadcrumbsPage";
+import ButtonsPage from "./pages/ButtonsPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           path='/components-breadcrumbs'
           element={<BreadcrumbsPage />}
         />
+        <Route exact path='/components-buttons' element={<ButtonsPage />} />
       </Routes>
     </BrowserRouter>
   );
